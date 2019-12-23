@@ -1,5 +1,5 @@
 layout: page
-title: "PAGE TITLE"
+title: Page title
 permalink: /test
 
 *Testing*
