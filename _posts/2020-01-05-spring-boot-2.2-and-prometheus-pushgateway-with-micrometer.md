@@ -108,18 +108,18 @@ Now open again the Prometheus Pushgateway (`http:\\localhost:9091`) and verify i
 
 # References
 
-https://micrometer.io
+[https://micrometer.io](https://micrometer.io)
 
-https://prometheus.io
+[https://prometheus.io](https://prometheus.io)
 
-https://prometheus.io/docs/practices/pushing
+[https://prometheus.io/docs/practices/pushing](https://prometheus.io/docs/practices/pushing)
 
-https://www.callicoder.com/spring-boot-actuator-metrics-monitoring-dashboard-prometheus-grafana
+[https://www.callicoder.com/spring-boot-actuator-metrics-monitoring-dashboard-prometheus-grafana](https://www.callicoder.com/spring-boot-actuator-metrics-monitoring-dashboard-prometheus-grafana)
 
-https://github.com/spring-projects/spring-boot/pull/14353
+[https://github.com/spring-projects/spring-boot/pull/14353](https://github.com/spring-projects/spring-boot/pull/14353)
 
 # Codebase
 
-The full example is found here: https://github.com/larchanjo/poc-spring-prometheus-gateway
+The full example is found here: [https://github.com/larchanjo/poc-spring-prometheus-gateway](https://github.com/larchanjo/poc-spring-prometheus-gateway)
 
 **Be Happy**
