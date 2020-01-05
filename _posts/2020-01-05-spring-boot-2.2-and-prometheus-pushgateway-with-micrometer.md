@@ -1,3 +1,8 @@
+---
+layout: post
+title: "Spring boot 2.2 and Prometheus Pushgateway with Micrometer"
+---
+
 # Spring boot 2.2 and Prometheus Pushgateway with Micrometer
 
 Hi, how are you? I hope everything is fine.
