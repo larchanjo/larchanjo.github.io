@@ -1,6 +1,7 @@
 ---
-layout: post
 title: "Spring boot 2.2 and Prometheus Pushgateway with Micrometer"
+summary: "..."
+image: ""
 ---
 
 # Spring boot 2.2 and Prometheus Pushgateway with Micrometer
