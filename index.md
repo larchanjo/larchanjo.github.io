@@ -10,3 +10,4 @@ Solid experience in developing reactive microservices and cloud applications usi
 
 # Posts
 
+![Spring boot 2.2 and Prometheus Pushgateway with Micrometer](https://github.com/larchanjo/larchanjo.github.io/blob/master/images/2020-01-05-spring-boot-22-and-prometheus-pushgateway-with-micrometer.png)
