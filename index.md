@@ -10,4 +10,12 @@ Solid experience in developing reactive microservices and cloud applications usi
 
 # Posts
 
+<ul>
+  {% for post in site.posts %}
+    <li>
+      <a href="{{ post.url }}">{{ post.title }}</a>
+    </li>
+  {% endfor %}
+</ul>
+
 ![Spring boot 2.2 and Prometheus Pushgateway with Micrometer](/images/2020-01-05-spring-boot-22-and-prometheus-pushgateway-with-micrometer.png) **Spring boot 2.2 and Prometheus Pushgateway with Micrometer**
