@@ -2,7 +2,7 @@
 title: "Spring boot 2.2 and Prometheus Pushgateway with Micrometer"
 summary: "..."
 image: ""
-date: "January 1, 2020"
+tags: "#java #spring #prometheus #micrometer"
 ---
 
 # Spring boot 2.2 and Prometheus Pushgateway with Micrometer

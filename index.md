@@ -16,6 +16,7 @@ Solid experience in developing reactive microservices and cloud applications usi
         <div>
            <h2>{{ post.title }}</h2>
            <p>{{ post.summary }}</p>
+           <p>{{ post.tags }}</p>
         </div>
       </a>
   {% endfor %}
