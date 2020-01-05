@@ -17,5 +17,3 @@ Solid experience in developing reactive microservices and cloud applications usi
     </li>
   {% endfor %}
 </ul>
-
-![Spring boot 2.2 and Prometheus Pushgateway with Micrometer](/images/2020-01-05-spring-boot-22-and-prometheus-pushgateway-with-micrometer.png) **Spring boot 2.2 and Prometheus Pushgateway with Micrometer**
