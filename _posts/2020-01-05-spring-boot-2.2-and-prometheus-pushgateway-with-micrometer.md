@@ -1,6 +1,6 @@
 ---
 title: "Spring boot 2.2 and Prometheus Pushgateway with Micrometer"
-summary: "..."
+summary: "This is a tutorial using Spring Boot 2.2 and Prometheus Push Gateway with Micrometer"
 tags:
     - " #java"
     - " #spring"
