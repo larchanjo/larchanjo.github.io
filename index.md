@@ -12,10 +12,8 @@ Solid experience in developing reactive microservices and cloud applications usi
 
 {% for post in site.posts %}
     <a href="{{ post.url }}">
-      <div class="card">
+      <div>
          <h2>{{ post.title }}</h2>
-         <h5>{{ post.date }}</h5>
-         <div class="fakeimg" style="height:200px;">Image</div>
          <p>{{ post.summary }}</p>
       </div>
     </a>
