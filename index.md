@@ -10,11 +10,13 @@ Solid experience in developing reactive microservices and cloud applications usi
 
 # Posts
 
-{% for post in site.posts %}
-    <a href="{{ post.url }}">
-      <div>
-         <h2>{{ post.title }}</h2>
-         <p>{{ post.summary }}</p>
-      </div>
-    </a>
-{% endfor %}
+<div>
+  {% for post in site.posts %}
+      <a href="{{ post.url }}">
+        <div>
+           <h2>{{ post.title }}</h2>
+           <p>{{ post.summary }}</p>
+        </div>
+      </a>
+  {% endfor %}
+</div>
