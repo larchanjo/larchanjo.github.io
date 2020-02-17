@@ -52,6 +52,8 @@ mvn archetype:generate \
 
 ## Maven
 
+Add this block of code in your `pom.xml`
+
 ```
 <plugin>
     <groupId>org.pitest</groupId>
@@ -69,7 +71,111 @@ mvn archetype:generate \
 </plugin>
 ```
 
-## Testing
+## Coding
+
+In this example we will use pure Java, so let's start creating the `Application.java`
+
+```
+public class Application {
+
+  public static void main(String[] args) {
+      // TODO
+  }
+
+}
+```
+
+Our use case is a product service, so we need to represent it, so let's create the `Product.java`
+
+```
+public class Product {
+
+  private String id;
+
+  private String name;
+
+  private Double value;
+
+  private Integer quantity;
+
+  // TODO - Getters and Setters
+  // TODO - Equals and HashCode
+  // TODO - ToString
+
+}
+```
+
+Now it is time to create a Repository, as we are using pure Java, we will represent the repository 
+using `Map`, so let's do it creating the `ProductRepository.java`
+
+```
+public class ProductRepository {
+
+  private final Map<String, Product> products = new HashMap<>();
+
+}
+```
+
+Now to represent the business logic, we need to create a Service,  so let's do it creating the 
+`ProductService.java`
+
+```
+public class ProductService {
+
+  private final ProductRepository repository = new ProductRepository();
+
+}
+```
+
+Well, all the structure has been defined then it is time to code some flows, such as saving flow
+
+`ProductRepository.java` add the method `save`
+
+```
+public Product save(Product product) {
+    System.out.println("Saving " + product);
+    products.putIfAbsent(product.getId(), product);
+    System.out.println("Saved " + product);
+
+    return product;
+  }
+```
+
+`ProductService.java` add the method `create`
+
+```
+public Product create(String name, Double value, Integer quantity) {
+    Product product = new Product(UUID.randomUUID().toString(), name, value, quantity);
+    System.out.println("Creating " + product);
+    repository.save(product);
+    System.out.println("Created " + product);
+
+    return product;
+  }
+```
+
+## Testing the Application
+
+To test the application use the `Application.java` and add this block of code
+
+```
+public static void main(String[] args) {
+      ProductService service = new ProductService();
+      Product product = service.create("Product B", 55.5, 10);
+      System.out.println(product);
+  }
+```
+
+Now run the `main method` and the output should be like this:
+
+```
+Creating Product{id='72ae61a1-96af-44c6-aeab-6276a5ee9293', name='Product B', value=55.5, quantity=10}
+Saving Product{id='72ae61a1-96af-44c6-aeab-6276a5ee9293', name='Product B', value=55.5, quantity=10}
+Saved Product{id='72ae61a1-96af-44c6-aeab-6276a5ee9293', name='Product B', value=55.5, quantity=10}
+Created Product{id='72ae61a1-96af-44c6-aeab-6276a5ee9293', name='Product B', value=55.5, quantity=10}
+```
+
+## Testing Pitest
 
 We have configured the plugin to run the goal `mutationCoverage` after the maven `test` phase, so run commando below: 
 
