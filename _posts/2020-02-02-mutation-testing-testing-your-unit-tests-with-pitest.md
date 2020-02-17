@@ -23,7 +23,7 @@ They are mostly slow, difficult to use and written to meet the needs of academic
 
 PIT is different. It's
 
-* Fast - can analyse in minutes what would take earlier systems days
+* Fast - can analyze in minutes what would take earlier systems days
 * Easy to use - works with ant, maven, gradle and others
 * Actively developed
 * Actively supported
@@ -136,9 +136,9 @@ public Product save(Product product) {
     System.out.println("Saving " + product);
     products.putIfAbsent(product.getId(), product);
     System.out.println("Saved " + product);
-
+    
     return product;
-  }
+}
 ```
 
 Into your `ProductService` java file add the method `create`
@@ -147,23 +147,27 @@ Into your `ProductService` java file add the method `create`
 public Product create(String name, Double value, Integer quantity) {
     Product product = new Product(UUID.randomUUID().toString(), name, value, quantity);
     System.out.println("Creating " + product);
+    if (product.getValue() <= 0) {
+      System.out.println("[ERROR] Value must no be zero or negative");
+      throw new IllegalArgumentException("Value must no be zero or negative");
+    }
     repository.save(product);
     System.out.println("Created " + product);
-
+    
     return product;
-  }
+}
 ```
 
 ## Testing the Application
 
-To test the application use the `Application.java` and add this block of code
+To test the application uses the `Application.java` and add this block of code
 
 ```
 public static void main(String[] args) {
       ProductService service = new ProductService();
       Product product = service.create("Product B", 55.5, 10);
       System.out.println(product);
-  }
+}
 ```
 
 Now run the `main method` and the output should be like this:
@@ -178,11 +182,52 @@ Saved Product{id='72ae61a1-96af-44c6-aeab-6276a5ee9293', name='Product B', value
 Created Product{id='72ae61a1-96af-44c6-aeab-6276a5ee9293', name='Product B', value=55.5, quantity=10}
 ```
 
+## Creating Unit Test
+
+Well, we have defined and coded all the save logic flow consequently it is time to test it!
+
+The part that represents the business logic is the `ProductService` class so let's create the unit
+test class `ProductServiceTest`
+
+```
+public class ProductServiceTest extends TestCase {
+
+}
+```
+
+Accordingly, we only have one flow (save) then let's test it.
+
+```
+public void testCreate() {
+    ProductService service = new ProductService();
+    Product product = service.create("Product B", 55.5, 10);
+
+    Assert.assertEquals("Product B", product.getName());
+    Assert.assertEquals(Double.valueOf(55.5), product.getValue());
+    Assert.assertEquals(Integer.valueOf(10), product.getQuantity());
+}
+```
+
 ## Testing Pitest
 
-We have configured the plugin to run the goal `mutationCoverage` after the maven `test` phase, so run commando below: 
+We have configured the plugin to run the goal `mutationCoverage` after the maven `test` phase, 
+so run commando below: 
 
 `mvn clean test`
+
+After running the command all the results of `pitest` are found in `pit-reports` and it is possible to 
+see the coverage and the mutating testing, as a result, the block of code:
+
+```
+if (product.getValue() <= 0) {
+  System.out.println("[ERROR] Value must no be zero or negative");
+  throw new IllegalArgumentException("Value must no be zero or negative");
+}
+```
+
+Was not covered and the test `testCreate` passed when the `pitest` removed it!
+
+**WE HAVE A BUG** and mutating test discovered it in the unit testing moment!
 
 # References
 
@@ -191,5 +236,7 @@ We have configured the plugin to run the goal `mutationCoverage` after the maven
 [Mutation Testing](https://www.guru99.com/mutation-testing.html)
 
 # Codebase
+
+https://github.com/larchanjo/poc-pitest
 
 **Be Happy**
