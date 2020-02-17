@@ -170,8 +170,11 @@ Now run the `main method` and the output should be like this:
 
 ```
 Creating Product{id='72ae61a1-96af-44c6-aeab-6276a5ee9293', name='Product B', value=55.5, quantity=10}
+
 Saving Product{id='72ae61a1-96af-44c6-aeab-6276a5ee9293', name='Product B', value=55.5, quantity=10}
+
 Saved Product{id='72ae61a1-96af-44c6-aeab-6276a5ee9293', name='Product B', value=55.5, quantity=10}
+
 Created Product{id='72ae61a1-96af-44c6-aeab-6276a5ee9293', name='Product B', value=55.5, quantity=10}
 ```
 
