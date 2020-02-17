@@ -129,7 +129,7 @@ public class ProductService {
 
 Well, all the structure has been defined then it is time to code some flows, such as saving flow
 
-`ProductRepository.java` add the method `save`
+Into your `ProductRepository` java file add the method `save`
 
 ```
 public Product save(Product product) {
@@ -141,7 +141,7 @@ public Product save(Product product) {
   }
 ```
 
-`ProductService.java` add the method `create`
+Into your `ProductService` java file add the method `create`
 
 ```
 public Product create(String name, Double value, Integer quantity) {
