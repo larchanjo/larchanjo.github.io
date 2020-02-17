@@ -227,7 +227,7 @@ if (product.getValue() <= 0) {
 
 Was not covered and the test `testCreate` passed when the `pitest` removed it!
 
-**WE HAVE A BUG** and mutating test discovered it in the unit testing moment!
+**WE HAVE A BUG** and mutating test discovered it in the unit testing moment! *THIS IS AWESOME*
 
 # References
 
@@ -237,6 +237,6 @@ Was not covered and the test `testCreate` passed when the `pitest` removed it!
 
 # Codebase
 
-https://github.com/larchanjo/poc-pitest
+[Repository](https://github.com/larchanjo/poc-pitest)
 
 **Be Happy**
