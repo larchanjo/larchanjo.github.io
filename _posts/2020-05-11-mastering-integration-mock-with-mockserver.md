@@ -7,6 +7,8 @@ tags:
     - " #mockserver"
 ---
 
+# Introduction
+
 Hi, how are you? I hope everything is fine!
 
 Today I would like to talk about integration and mock. In the last few years, the way that we build software is changing constantly and one way to start a new project is by using the API-first approach.
@@ -26,6 +28,15 @@ On my previous project, I had this scenery so I had thought,  I need to keep it 
 # What is MockServer?
 
 [Mockserver](https://github.com/mock-server/mockserver) is a open source project that enables easy mocking of any system you integrate with via HTTP or HTTPS with clients written in Java, JavaScript and Ruby. MockServer also includes a proxy that introspects all proxied traffic including encrypted SSL traffic and supports Port Forwarding, Web Proxying, etc.
+
 # Why use MockServer
   
 MockServer allows you to mock any server or service via HTTP or HTTPS, such as a REST or RPC service.
+
+# Getting Started
+
+#### Start MockServer
+
+```
+docker run --rm --net=host mockserver/mockserver -serverPort 1080 -logLevel INFO
+```
