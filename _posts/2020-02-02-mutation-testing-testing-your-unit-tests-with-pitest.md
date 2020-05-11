@@ -1,6 +1,6 @@
 ---
 title: "Mutation Testing - Testing your unit tests with PiTest"
-summary: "XXX"
+summary: "Who tests your unit tests?"
 tags:
     - " #java"
     - " #unittests"
