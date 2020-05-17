@@ -105,7 +105,7 @@ This article is just a concept about MockServer, to learn more, follow this link
 
 [Request Matchers - Cookies](https://www.mock-server.com/mock_server/creating_expectations.html#button_match_request_by_cookies_and_query_parameters)
 
-[Request Matchers - Bdy](https://www.mock-server.com/mock_server/creating_expectations.html#button_match_request_by_body_in_utf16)
+[Request Matchers - Body](https://www.mock-server.com/mock_server/creating_expectations.html#button_match_request_by_body_in_utf16)
 
 [Creating Expectations](https://www.mock-server.com/mock_server/creating_expectations.html)
 
