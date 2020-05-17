@@ -1,6 +1,6 @@
 ---
 title: "Mastering integration mock with Mockserver"
-summary: "..."
+summary: "05-11-2020"
 tags:
     - " #java"
     - " #api"
@@ -54,3 +54,63 @@ To do that, first, we need to run the Mockserver, there are many [ways](https://
 ```
 docker run --rm --net=host mockserver/mockserver -serverPort 1080 -logLevel INFO
 ```
+
+After start MockServer, it is time to learn what is [Expectations](https://www.mock-server.com/mock_server/creating_expectations.html)
+
+## Expectations
+
+Expectations are a mechanism by which we mock the request from a client and the resulting response from MockServer.
+
+So let's create owner expectation, to do that we need to run the command bellow;
+
+```
+{
+   "httpRequest":{
+      "method":"GET",
+      "path":"/super-app/v1/actuator/health"
+   },
+   "httpResponse":{
+      "headers":{
+         "Content-Type":[
+            "application/json; charset=utf-8"
+         ]
+      },
+      "statusCode": 200,
+      "body": {
+      	"status" : "UP"
+      }
+   }
+}
+```
+
+In the example above we mocked a health check API at the address `http:\\mocokserver-host:mockserver-port/super-app/v1/actuator/health`
+
+So let's test it, to do that run the command bellow:
+
+```
+curl --location --request GET 'http:\\mocokserver-host:mockserver-port/super-app/v1/actuator/health'
+```
+
+## More content
+
+This article is just a concept about MockServer, to learn more, follow this links:
+
+[Request Matchers - Method](https://www.mock-server.com/mock_server/creating_expectations.html#button_match_request_by_cookies_and_query_parameters)
+
+[Request Matchers - Path](https://www.mock-server.com/mock_server/creating_expectations.html#button_match_request_by_path)
+
+[Request Matchers - Query String](https://www.mock-server.com/mock_server/creating_expectations.html#button_match_request_by_cookies_and_query_parameters)
+
+[Request Matchers - Headers](https://www.mock-server.com/mock_server/creating_expectations.html#button_match_request_by_headers)
+
+[Request Matchers - Cookies](https://www.mock-server.com/mock_server/creating_expectations.html#button_match_request_by_cookies_and_query_parameters)
+
+[Request Matchers - Bdy](https://www.mock-server.com/mock_server/creating_expectations.html#button_match_request_by_body_in_utf16)
+
+[Creating Expectations](https://www.mock-server.com/mock_server/creating_expectations.html)
+
+[Verifying Requests](https://www.mock-server.com/mock_server/verification.html)
+
+[Persisting Expectations](https://www.mock-server.com/mock_server/persisting_expectations.html)
+
+# Be Happy
